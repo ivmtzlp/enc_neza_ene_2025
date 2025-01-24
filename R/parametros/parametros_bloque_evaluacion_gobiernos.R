@@ -1,5 +1,5 @@
 
-# Bloque Problematicas temas ---------------------------------------------------------------
+# Bloque Evaluacion de gobierno ---------------------------------------------------------------
 
 # Conocimeinteo personajes 
 p_conoce_per_tit <-

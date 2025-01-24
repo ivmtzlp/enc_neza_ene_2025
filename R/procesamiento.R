@@ -53,11 +53,11 @@ diseno_neza <- readr::read_rds(paste0(path_insumos_drive, "diseño.rda"))
 #   left_join(bd_clasificacion_nezaapan, by = c("SECCION" = "seccion")) 
 
 # Actualizacion diccionario
-googledrive::drive_auth(path = path_api_key)
-2
-googledrive::drive_download(file = link_dicc,
-                            path = path_dicc,
-                            overwrite = T)
+# googledrive::drive_auth(path = path_api_key)
+# 2
+# googledrive::drive_download(file = link_dicc,
+#                             path = path_dicc,
+#                             overwrite = T)
 
 dicc <- 
   readxl::read_excel(path = path_dicc) |> 
