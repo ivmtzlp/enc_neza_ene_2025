@@ -13,3 +13,9 @@ enc_neza$muestra$diseno$variables |>
 # confirmar respuestas satisfacccion ---------------------------------------------------------------
 enc_neza$muestra$diseno$variables |> 
   distinct(satisfacion_agua)
+
+
+
+# confirmar respuestas eleccion_pjn_participacion ---------------------------------------------------------------
+enc_neza$muestra$diseno$variables |> 
+  distinct(eleccion_pjn_participacion)

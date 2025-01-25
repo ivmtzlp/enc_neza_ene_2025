@@ -1,4 +1,7 @@
 
+
+# Bloque Desempeno gobernatura ---------------------------------------------------------------
+
 # Desempeno gobierno delfina
 
 bd_delfina_calif <- 
