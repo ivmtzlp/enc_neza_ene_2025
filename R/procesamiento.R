@@ -197,6 +197,9 @@ copiar_archivos_con_nombre_modificado(origen = "./auditoria/data/",
 source(file = './R/revisar_cuotas.R')
 
 
+enc_neza$muestra$diseno$variables |> 
+  writexl::write_xlsx(path = "./data/bd_efectivas_neza.xlsx")
+
 # enc_neza$Auditoria$run_app()
 
 # source("./R/entregable_press_general.R")
