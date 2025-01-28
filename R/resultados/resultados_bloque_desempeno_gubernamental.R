@@ -1,4 +1,5 @@
 
+source(file = './R/parametros/parametros_bloque_desempeno_gubernamental.R')
 
 # Bloque Desempeno gobernatura ---------------------------------------------------------------
 
@@ -95,14 +96,14 @@ p_problemas_agua_graf <-
 
 # Mejora inmediata
 
-p_problemas_agua_graf <-
-  enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "problemas_agua", 
+p_mejora_servicio_graf <-
+  enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "mejora_servicio", 
                                                     salto = 60, 
                                                     pct_otros = 0.0,
-                                                    text_size = 10,
-                                                    orden_respuestas = rev(orden_problemas_agua)) +
-  scale_fill_manual(values = colores_problemas_agua) +
-  labs(caption = p_problemas_agua_tit) +
+                                                    text_size = 10)+
+
+  scale_fill_manual(values = colores_mejora_servicio) +
+  labs(caption = p_mejora_servicio_tit) +
   theme(axis.text.y = element_text(size = 16),
         axis.text.x = element_text(size = 14),
         legend.text = element_text(size = 14))
