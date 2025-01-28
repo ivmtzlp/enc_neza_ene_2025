@@ -37,6 +37,5 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
           location = ph_location_label(ph_label = "imagen_principal")) |>
   ph_with(value = "Redes sociales utilizadas",
           location = ph_location_label(ph_label = "titulo"))
-# Bloque evaluación de gobiernos 
 
 print(pptx, path_export)
