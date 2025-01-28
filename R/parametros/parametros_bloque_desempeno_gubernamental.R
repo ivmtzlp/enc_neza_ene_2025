@@ -86,18 +86,18 @@ orden_problemas_agua <- c("Todos los días", "Varias veces a la semana", "Rara v
 
 # Mejora inmediata
 
-p_problemas_agua_tit <- 
+p_mejora_servicio_tit <- 
   dicc |> 
-  filter(grepl(pattern = "problemas_agua",
+  filter(grepl(pattern = "mejora_servicio",
                x = llaves)) |> 
   distinct(pregunta) |> 
   pull() |> 
   stringr::str_wrap(width = 55)
 
-colores_problemas_agua <- 
+colores_mejora_servicio <- 
   enc_neza$muestra$diseno$variables |>
   as_tibble() |> 
-  select(contains("problemas_agua")) |> 
+  select(contains("mejora_servicio")) |> 
   tidyr::pivot_longer(cols = everything(), 
                       names_to = "pregunta", 
                       values_to = "respuesta") |> 
