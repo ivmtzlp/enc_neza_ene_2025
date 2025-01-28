@@ -1,6 +1,7 @@
 
 # Bloque Introduccion ---------------------------------------------------------------
 
+source(file = './R/parametros/parametros_bloque_introduccion.R')
 
 # Temas
 p_temas_graf <-
