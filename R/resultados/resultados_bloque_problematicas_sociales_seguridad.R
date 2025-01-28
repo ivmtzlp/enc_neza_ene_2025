@@ -1,6 +1,7 @@
 
-
+source(file = './R/parametros/parametros_bloque_problematicas_sociales_seguridad.R')
 # Problemas mas importantes
+
 
 p_problemas_edomex_graf <- 
   enc_neza$Resultados$Descriptiva$lollipops_multirespuesta(patron_inicial = "problemas_edomex_", 
