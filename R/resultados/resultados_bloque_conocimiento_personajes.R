@@ -1,3 +1,4 @@
+source(file = './R/parametros/parametros_bloque_conocimiento_personajes.R')
 
 # Bloque Conocimiento de personajes ---------------------------------------------------------------
 

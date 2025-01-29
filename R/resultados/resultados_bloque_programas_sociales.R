@@ -1,3 +1,4 @@
+source(file = './R/parametros/parametros_bloque_programas_sociales.R')
 
 
 # Bloque Programas sociales ---------------------------------------------------------------
@@ -32,7 +33,7 @@ p_prog_soc_graf <-
        y = NULL,
        fill = NULL,
        caption = p_prog_soc_tit) +
-  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 25)) + #salto_tema
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 50)) + #salto_tema
   scale_y_continuous(labels = scales::percent_format(accuracy = 1),limits = c(0,.35)) +
   #lemon::scale_y_symmetric(labels = function(x) scales::percent(abs(x), accuracy = 1)) +
   theme_minimal() +

@@ -1,3 +1,4 @@
+source(file = './R/parametros/parametros_bloque_evaluacion_gobiernos.R')
 
 # Bloque Evaluacion de gobierno ---------------------------------------------------------------
 

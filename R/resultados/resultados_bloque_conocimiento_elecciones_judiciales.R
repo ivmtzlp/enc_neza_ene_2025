@@ -1,3 +1,4 @@
+source(file = './R/parametros/parametros_bloque_conocimiento_elecciones_judiciales.R')
 
 # Bloque Conocimiento elecciones judiciales ---------------------------------------------------------------
 

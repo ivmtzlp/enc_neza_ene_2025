@@ -1,3 +1,4 @@
+source(file = './R/parametros/parametros_bloque_intencion_voto_gobernador.R')
 
 
 # Bloque Intención de voto a Gobernador ---------------------------------------------------------------

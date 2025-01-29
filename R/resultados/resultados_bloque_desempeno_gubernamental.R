@@ -1,4 +1,4 @@
-
+library(dplyr)
 source(file = './R/parametros/parametros_bloque_desempeno_gubernamental.R')
 
 # Bloque Desempeno gobernatura ---------------------------------------------------------------
@@ -20,20 +20,21 @@ bd_delfina_calif <-
   mutate(sup =  0,
          inf = 0) 
 
-
+parte_1 <- bd_delfina_calif[1:7, ]
 p_delfina_1_graf <-
-  bd_delfina_calif |> 
+  parte_1 |> 
   encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 6)+
   scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
   labs(caption = p_delfina_tit)+
   encuestar::tema_morant()
 
-
-# p_delfina_2_graf <-
-#   encuestar:::graficar_intervalo_numerica(escala = c(0,10))+
-#   scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
-#   labs(caption = p_delfina_tit)+
-#   encuestar::tema_morant()
+parte_2 <- bd_delfina_calif[8:14, ]
+p_delfina_2_graf <-
+  parte_2 |> 
+  encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 6)+
+  scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
+  labs(caption = p_delfina_tit)+
+  encuestar::tema_morant()
 
 
 # Satisfación sevicios 

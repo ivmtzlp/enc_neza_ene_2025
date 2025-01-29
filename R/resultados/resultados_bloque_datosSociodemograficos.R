@@ -1,4 +1,4 @@
-source(file = "./R/constantes_bloque07_datosSociodemograficos.R")
+source(file = "./R/parametros/paraametros_bloque_datosSociodemograficos.R")
 
 # Bloque Datos Sociodemograficos --------------------------------------------------------------
 
