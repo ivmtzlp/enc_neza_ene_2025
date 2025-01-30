@@ -15,31 +15,61 @@ encuestar:::analizar_cruce_aspectos(diseno = enc_neza$Resultados$diseno,
                                     filtro_variables_secundarias = "Sí lo conoce",
                                     vartype = "cv"  )
 
+# p_conoce_per_cruce_sexo_graf <-
+#       enc_neza$Resultados$Cruce$lolipop_diferencias(variable_principal = "sexo",
+#                                               variables_secundarias =  c("conoce_per_delfina","conoce_per_claudia","conoce_per_neza"),
+#                                               filtro_variables_secundarias = "Sí lo conoce", 
+#                                               orden_variablePrincipal = c("Delfina Gómez Álvarez",
+#                                                                           "Claudia Sheinbaum","Adolfo Cerqueda Rebollo"),
+#                                               colores_variables_secundarias = c("F" = "blue", 
+#                                                                                 "M" = "pink"), 
+#                                               caption = "Conocimiento de personaje por sexo", 
+#                                               invertir_variables = T,
+#                                               limits = c(0,1.05), 
+#                                               nudge_x= 0.15,
+#                                               wrap_y = 1,
+#                                               wrap_caption = 50,
+#                                               traslape =0.18,
+#                                               limite_dif_pct = 0.02,
+#               
+#                                               
+#                                               )
+# enc_neza$Resultados$Cruce$datos <- enc_neza$Resultados$Cruce$datos %>%
+#   mutate(sexo_cat = if_else(sexo == "F", "Mujer", "Hombre"))
+enc_neza$muestra$diseno$variables <- enc_neza$muestra$diseno$variables %>%
+  mutate(sexo_cat = if_else(sexo == "F", "Mujer", "Hombre"))
+
+# Inspeccionar la columna 'sexo_cat'
+enc_neza$muestra$diseno$variables %>%
+  select(sexo_cat) %>%
+  glimpse()
 p_conoce_per_cruce_sexo_graf <-
-      enc_neza$Resultados$Cruce$lolipop_diferencias(variable_principal = "sexo",
-                                              variables_secundarias =  c("conoce_per_delfina","conoce_per_claudia","conoce_per_neza"),
-                                              filtro_variables_secundarias = "Sí lo conoce", 
-                                              orden_variablePrincipal = c("Delfina Gómez Álvarez",
-                                                                          "Claudia Sheinbaum","Adolfo Cerqueda Rebollo"),
-                                              colores_variables_secundarias = c("F" = "blue", 
-                                                                                "M" = "pink"), 
-                                              caption = "Conocimiento de personaje por sexo", 
-                                              invertir_variables = T,
-                                              limits = c(0,1.05), 
-                                              nudge_x= 0.15,
-                                              wrap_y = 1,
-                                              wrap_caption = 50,
-                                              traslape =0.18,
-                                              limite_dif_pct = 0.02,
-                                             
-                                              
-                                              )
-                           
-      guides(color = guide_legend(labels = c("F"="Mujer","M"="Hombre")) )
+  
+  enc_neza$muestra$diseno$variables$Cruce$lolipop_diferencias(
+        variable_principal = "sexo_cat",
+        variables_secundarias = c("conoce_per_delfina", "conoce_per_claudia", "conoce_per_neza"),
+        filtro_variables_secundarias = "Sí lo conoce", 
+        orden_variablePrincipal = c("Delfina Gómez Álvarez", "Claudia Sheinbaum", "Adolfo Cerqueda Rebollo"),
+        colores_variables_secundarias = c("M" = "blue", "F" = "pink"),  # Mantén los colores con las etiquetas originales
+        caption = "Conocimiento de personaje por sexo", 
+        invertir_variables = TRUE,
+        limits = c(0,1.05), 
+        nudge_x = 0.15,
+        wrap_y = 1,
+        wrap_caption = 50,
+        traslape = 0.18,
+        limite_dif_pct = 0.02,
+        
+       )
+   
 
 #grafica cruce por edad
 color_h
- 
+
+
+
+
+
 #conocimiento de personajes por edad 
 encuestar:::analizar_cruce_aspectos(diseno = enc_neza$Resultados$diseno,
                                     variable_principal = "rango_edad",
