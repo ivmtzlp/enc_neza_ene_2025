@@ -184,5 +184,15 @@ colores_progeso_municipio <-
   distinct(respuesta) |> 
   asignar_colores()
 
+# Progreso general
+
 orden_progreso_municipio <- c("Progresando",  "Estancado", "En retroceso", "Ns/Nc" )
 
+colores_progreso <- c(
+  "En retroceso" = color_opinionMala,
+  "Estancado" =  color_regular,
+  "Progresando" = color_opinionBuena)
+
+
+p_progeso_gen_tit <- "¿Cree usted que, en este momento, (...) está: progresando, estancado o en retroceso?" |> 
+  stringr::str_wrap(width = 55)

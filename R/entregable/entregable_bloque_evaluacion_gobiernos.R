@@ -39,28 +39,35 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = "Confianza en figuras de gobierno",
           location = ph_location_label(ph_label = "titulo"))
 
-# Progreso México
+# # Progreso México
+# add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+#   ph_with(value = p_progeso_mex_graf , 
+#           location = ph_location_label(ph_label = "imagen_principal")) |>
+#   ph_with(value = "Percepción del progreso en México",
+#           location = ph_location_label(ph_label = "titulo"))
+# 
+# 
+# # Progreso Edomex
+# add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+#   ph_with(value = p_progeso_edomex_graf , 
+#           location = ph_location_label(ph_label = "imagen_principal")) |>
+#   ph_with(value = "Percepción del progreso en el Estado de México",
+#           location = ph_location_label(ph_label = "titulo"))
+# 
+# 
+# # Proegreso Municipio
+# add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+#   ph_with(value = p_progeso_municipio_graf , 
+#           location = ph_location_label(ph_label = "imagen_principal")) |>
+#   ph_with(value = "Percepción del progreso municipal",
+#           location = ph_location_label(ph_label = "titulo"))
+
+
+# Progreso general
 add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
-  ph_with(value = p_progeso_mex_graf , 
+  ph_with(value = progeso_general_graf , 
           location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Percepción del progreso en México",
-          location = ph_location_label(ph_label = "titulo"))
-
-
-# Progreso Edomex
-add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
-  ph_with(value = p_progeso_edomex_graf , 
-          location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Percepción del progreso en el Estado de México",
-          location = ph_location_label(ph_label = "titulo"))
-
-
-# Proegreso Municipio
-
-add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
-  ph_with(value = p_progeso_municipio_graf , 
-          location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Percepción del progreso municipal",
+  ph_with(value = "Percepción del progreso en en los tres niveles del Estado",
           location = ph_location_label(ph_label = "titulo"))
 
 print(pptx, path_export)

@@ -103,49 +103,65 @@ p_confia_per_graf <-
 #                                                 caption_opinion = p_aprueba_trabajo_pm_tit)
 
 
-# Proegreso Mexico
+# # Proegreso Mexico
+# 
+# p_progeso_mex_graf <-
+#   enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_mex", 
+#                                                     salto = 60, 
+#                                                     pct_otros = 0.0,
+#                                                     text_size = 10,
+#                                                     orden_respuestas = rev(orden_progreso_mex)) +
+#   scale_fill_manual(values = colores_progeso_mex) +
+#   labs(caption = p_progeso_mex_tit) +
+#   theme(axis.text.y = element_text(size = 16),
+#         axis.text.x = element_text(size = 14),
+#         legend.text = element_text(size = 14))
+# 
+# 
+# # Proegreso Edomex
+# 
+# p_progeso_edomex_graf <-
+#   enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_edomex", 
+#                                                     salto = 60, 
+#                                                     pct_otros = 0.0,
+#                                                     text_size = 10,
+#                                                     orden_respuestas = rev(orden_progreso_edomex)) +
+#   scale_fill_manual(values = colores_progeso_edomex) +
+#   labs(caption = p_progeso_edomex_tit) +
+#   theme(axis.text.y = element_text(size = 16),
+#         axis.text.x = element_text(size = 14),
+#         legend.text = element_text(size = 14))
+# 
+# 
+# # Proegreso Municipio
+# 
+# p_progeso_municipio_graf <-
+#   enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_municipio", 
+#                                                     salto = 60, 
+#                                                     pct_otros = 0.0,
+#                                                     text_size = 10,
+#                                                     orden_respuestas = rev(orden_progreso_municipio)) +
+#   scale_fill_manual(values = colores_progeso_municipio) +
+#   labs(caption = p_progeso_municipio_tit) +
+#   theme(axis.text.y = element_text(size = 16),
+#         axis.text.x = element_text(size = 14),
+#         legend.text = element_text(size = 14))
 
-p_progeso_mex_graf <-
-  enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_mex", 
-                                                    salto = 60, 
-                                                    pct_otros = 0.0,
-                                                    text_size = 10,
-                                                    orden_respuestas = rev(orden_progreso_mex)) +
-  scale_fill_manual(values = colores_progeso_mex) +
-  labs(caption = p_progeso_mex_tit) +
-  theme(axis.text.y = element_text(size = 16),
-        axis.text.x = element_text(size = 14),
-        legend.text = element_text(size = 14))
+# Progreso general
 
-
-# Proegreso Edomex
-
-p_progeso_edomex_graf <-
-  enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_edomex", 
-                                                    salto = 60, 
-                                                    pct_otros = 0.0,
-                                                    text_size = 10,
-                                                    orden_respuestas = rev(orden_progreso_edomex)) +
-  scale_fill_manual(values = colores_progeso_edomex) +
-  labs(caption = p_progeso_edomex_tit) +
-  theme(axis.text.y = element_text(size = 16),
-        axis.text.x = element_text(size = 14),
-        legend.text = element_text(size = 14))
-
-
-# Proegreso Municipio
-
-p_progeso_municipio_graf <-
-  enc_neza$Resultados$Descriptiva$barras_categorica(codigo = "progeso_municipio", 
-                                                    salto = 60, 
-                                                    pct_otros = 0.0,
-                                                    text_size = 10,
-                                                    orden_respuestas = rev(orden_progreso_municipio)) +
-  scale_fill_manual(values = colores_progeso_municipio) +
-  labs(caption = p_progeso_municipio_tit) +
-  theme(axis.text.y = element_text(size = 16),
-        axis.text.x = element_text(size = 14),
-        legend.text = element_text(size = 14))
-
-
+progeso_general_graf <- 
+  enc_neza$Resultados$Especial$candidatoOpinion(patron_inicial = "progeso", 
+                                                aspectos = c("mex","edomex","municipio"), 
+                                                ns_nc = "Ns/Nc", 
+                                                regular = "Estancado", 
+                                                grupo_positivo = c("Progresando"), 
+                                                grupo_negativo = c("En retroceso"), 
+                                                colores_opinion = colores_progreso, 
+                                                color_nsnc = color_nsnc, 
+                                                orden_resp = c("En retroceso","Estancado","Progresando"), 
+                                                size_text_cat = 16, 
+                                                size_pct = 16,
+                                                salto = 35,
+                                                orden_cat = c("mex","edomex","municipio"),
+                                                caption_opinion = p_progeso_gen_tit )
 
