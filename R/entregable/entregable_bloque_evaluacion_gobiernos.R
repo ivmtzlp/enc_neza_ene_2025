@@ -11,7 +11,7 @@ pptx <-
 
 
 add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
-  ph_with(value = 'Conocimiento Personajes Secundarios',
+  ph_with(value = 'Evaluación de Gobiernos',
           location = ph_location_label(ph_label = "titulo")) 
 
 # Conocimeinteo personajes 
@@ -19,7 +19,7 @@ add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
 add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = p_conoce_per_graf, 
           location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Personajes publicos",
+  ph_with(value = "Personajes públicos",
           location = ph_location_label(ph_label = "titulo"))
 
 
@@ -28,7 +28,7 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
 add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = p_aprueba_per_graf , 
           location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Aprobación de figuras publicas",
+  ph_with(value = "Aprobación de figuras públicas",
           location = ph_location_label(ph_label = "titulo"))
 
 # Confianza en figuras publicas 
