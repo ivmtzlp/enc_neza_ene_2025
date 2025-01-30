@@ -79,7 +79,7 @@ orden_generaciones <-
   c("Generación Z (18 a 25 años)",
     "Millenials (26 a 40 años)",
     "Generación X (41 a 55 años)",
-    "Baby Boomers  (56 años o más)")
+    "Baby Boomers (56 años o más)")
 
 orden_AMAI <-
   c("A_B", "C_mas", "C", "C_menos", "D_mas", "D", "E")
