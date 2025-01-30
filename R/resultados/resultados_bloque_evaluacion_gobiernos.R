@@ -44,7 +44,11 @@ p_aprueba_per_graf <-
 
 
 
-
+# ,
+# burbuja = T,
+# llave_burbuja = "conoce_per",
+# filtro_burbuja = "Sí lo conoce",
+# size_caption_burbuja = "Conocimiento"
 
 # Calificacion a autoridades
 
@@ -73,6 +77,9 @@ p_confia_per_graf <-
          inf = 0) |> 
   encuestar:::graficar_intervalo_numerica(escala = c(0,10))+
   scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
+  scale_x_discrete(limits = rev(c("Claudia Sheinbaum", 
+                              "Delfina Gómez Álvarez", 
+                              "Presidente Municipal")))+
   labs(caption = p_confia_per_tit)+
   encuestar::tema_morant()
 
