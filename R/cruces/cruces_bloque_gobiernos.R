@@ -39,7 +39,7 @@ p_conoce_per_cruce_sexo_graf <-
 
 #grafica cruce por edad
 color_h
-
+ 
 #conocimiento de personajes por edad 
 encuestar:::analizar_cruce_aspectos(diseno = enc_neza$Resultados$diseno,
                                     variable_principal = "rango_edad",
