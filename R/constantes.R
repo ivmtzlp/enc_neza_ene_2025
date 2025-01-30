@@ -59,7 +59,7 @@ color_movpro <- color_rspchis
 
 color_h <- color_morena
 color_m <- color_morena_complemento
-
+ 
 # Cruces --------------------------------------------------------------------------------------
 
 colores_opinion <-
