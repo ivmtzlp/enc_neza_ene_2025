@@ -1,13 +1,13 @@
-library(officer)
-library(dplyr)
-
-path_export <- 
-  encuestar:::formato_archivo(nombre = "./presentaciones/entregable_bloque_intencion_voto_gobernador", 
-                              extension = "pptx", 
-                              tolerancia = 60)
-
-pptx <- 
-  read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
+# library(officer)
+# library(dplyr)
+# 
+# path_export <- 
+#   encuestar:::formato_archivo(nombre = "./presentaciones/entregable_bloque_intencion_voto_gobernador", 
+#                               extension = "pptx", 
+#                               tolerancia = 60)
+# 
+# pptx <- 
+#   read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
 
 add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
@@ -33,4 +33,4 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
 
 
 
-print(pptx, path_export)
+#print(pptx, path_export)

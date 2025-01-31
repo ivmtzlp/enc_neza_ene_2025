@@ -24,8 +24,9 @@ p_delincuencia_edomex_graf <-
 enc_neza$Resultados$Descriptiva$gauge_categorica(codigo = 'delincuencia_edomex',
                                                  filtro = 'respuesta == "Seguro"',
                                                  color = color_general)+
-  labs(title = paste0(p_delincuencia_edomex_tit,'\nNota: Pregunta respondida por personas que contestaron "Seguro"') )+
-  encuestar::tema_transparente()
+  labs(title = paste0(p_delincuencia_edomex_tit,'\nNota: Pregunta respondida por personas\n que contestaron "Seguro"') )+
+  encuestar::tema_transparente() +
+  theme(plot.title = element_text(size = 13))
 
 
 
@@ -50,13 +51,13 @@ p_delito_frecuente_graf <-
                                                        limits = c(0, 0.5), 
                                                        width_cats = 55, 
                                                        size = 2,
-                                                       size_pct = 6) +
+                                                       size_pct = 4) +
   labs(caption = p_delito_municipio_tit) +
   scale_color_manual(values = rep(color_general, 14)) +
   theme(text = element_text(family = "Poppins"), 
         axis.text.x = element_text(size = 12),
-        axis.text.y = element_text(size = 14),
-        plot.caption = element_text(size = 10))
+        axis.text.y = element_text(size = 13),
+        plot.caption = element_text(size = 14))
 
 
 
@@ -65,7 +66,7 @@ p_delito_frecuente_graf <-
 p_seguridad_graf <-
   enc_neza$Resultados$Descriptiva$barras_aspectos(patron_inicial = "seguridad",
                                                   aspectos = aspectos_seguridad, 
-                                                  salto = 60, 
+                                                  salto = 45, 
                                                   filtro = "respuesta == 'Sí'",
                                                   text_size = 13) +
   #labs(caption = paste0(p_seguridad_tit, '\nEntrevistados que contestaron "Sí lo conoce"')) +
@@ -75,8 +76,8 @@ p_seguridad_graf <-
   tema_morant() +
   tema_transparente() +
   theme(text = element_text(family = "Poppins"), 
-        axis.text.x = element_text(size = 9),
-        axis.text.y = element_text(size = 10),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 13),
         plot.caption = element_text(size = 14))
 
 
@@ -87,7 +88,8 @@ p_extorsion_edomex_graf <-
                                                    filtro = 'respuesta == "Sí"',
                                                    color = color_general)+
   labs(title = paste0(p_extorsion_edomex_tit,'\nNota: Pregunta respondida por personas que contestaron "Sí"') )+
-  encuestar::tema_transparente()
+  encuestar::tema_transparente() +
+  theme(plot.title = element_text(size = 13))
 
 
 

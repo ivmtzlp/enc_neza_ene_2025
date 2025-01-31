@@ -20,21 +20,31 @@ bd_delfina_calif <-
   mutate(sup =  0,
          inf = 0) 
 
-parte_1 <- bd_delfina_calif[1:7, ]
-p_delfina_1_graf <-
-  parte_1 |> 
-  encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 6)+
-  scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
-  labs(caption = p_delfina_tit)+
-  encuestar::tema_morant()
+#parte_1 <- bd_delfina_calif[1:7, ]
 
-parte_2 <- bd_delfina_calif[8:14, ]
+
+p_delfina_1_graf <-
+  bd_delfina_calif |> 
+  top_n(n = 7,wt = media ) |> 
+  encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 5)+
+  scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
+  labs(caption = "\n\n")+
+  encuestar::tema_morant()+
+  theme(
+    axis.text.y = element_text(size = 11)
+  )
+
+#parte_2 <- bd_delfina_calif[8:14, ]
 p_delfina_2_graf <-
-  parte_2 |> 
-  encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 6)+
+  bd_delfina_calif |> 
+  top_n(n = -7,wt = media ) |> 
+  encuestar:::graficar_intervalo_numerica(escala = c(0,10),text_point_size = 5)+
   scale_y_continuous(limits = c(0,10),breaks = c(0:10))+
   labs(caption = p_delfina_tit)+
-  encuestar::tema_morant()
+  encuestar::tema_morant()+
+  theme(
+    axis.text.y = element_text(size = 11)
+  )
 
 
 # Satisfación sevicios 
@@ -73,7 +83,7 @@ g_satisfacion <-
                                                 
                                                 #parametros 
                                                 size_caption_opinion = 12, 
-                                                size_text_legend = 14,
+                                                size_text_legend = 9,
                                                 size_caption_nsnc = 12, 
                                                 size_text_cat = 14, 
                                                 salto_respuestas = 5,

@@ -5,9 +5,9 @@
 #   encuestar:::formato_archivo(nombre = "./presentaciones/introduccion", 
 #                               extension = "pptx", 
 #                               tolerancia = 60)
-
-pptx <- 
-  read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
+# 
+# pptx <- 
+#   read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
 
 add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%

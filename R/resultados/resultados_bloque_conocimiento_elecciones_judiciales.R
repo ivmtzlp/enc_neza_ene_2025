@@ -12,6 +12,7 @@ p_eleccion_pjn_fecha_graf <-
                                                     text_size = 10,
                                                     orden_respuestas = rev(orden_eleccion_pjn_fecha)) +
   scale_fill_manual(values = colores_eleccion_pjn_fecha) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1.0),limits = c(0,1))+
   labs(caption = p_eleccion_pjn_fecha_tit) +
   theme(axis.text.y = element_text(size = 16),
         axis.text.x = element_text(size = 14),
@@ -28,6 +29,7 @@ p_eleccion_pjn_participacion_graf <-
                                                     text_size = 10,
                                                     orden_respuestas = rev(orden_eleccion_pjn_participacion)) +
   scale_fill_manual(values = colores_eleccion_pjn_participacion) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1.0),limits = c(0,1)) +
   labs(caption = p_eleccion_pjn_participacion_tit) +
   theme(axis.text.y = element_text(size = 16),
         axis.text.x = element_text(size = 14),

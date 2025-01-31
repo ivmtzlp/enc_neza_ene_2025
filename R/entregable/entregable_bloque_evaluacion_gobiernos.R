@@ -1,13 +1,13 @@
-library(officer)
-library(dplyr)
-
-path_export <- 
-  encuestar:::formato_archivo(nombre = "./presentaciones/bloque_evaluacion_gobierno", 
-                              extension = "pptx", 
-                              tolerancia = 60)
-
-pptx <- 
-  read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
+# library(officer)
+# library(dplyr)
+# 
+# path_export <- 
+#   encuestar:::formato_archivo(nombre = "./presentaciones/bloque_evaluacion_gobierno", 
+#                               extension = "pptx", 
+#                               tolerancia = 60)
+# 
+# pptx <- 
+#   read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
 
 add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
@@ -70,4 +70,4 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = "Percepción del progreso en en los tres niveles del Estado",
           location = ph_location_label(ph_label = "titulo"))
 
-print(pptx, path_export)
+# print(pptx, path_export)

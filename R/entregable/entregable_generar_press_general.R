@@ -22,12 +22,12 @@ source(file = './R/resultados/resultados_bloque_programas_sociales.R')
 proyecto_fecha <- "Encuesta Nezahualcoyotl - Enero 2025"
 
 path_export <- 
-  encuestar:::formato_archivo(nombre = "./presentaciones/", 
+  encuestar:::formato_archivo(nombre = "./presentaciones/Press_general", 
                               extension = "pptx", 
                               tolerancia = 60)
 
 #dia <- lubridate::today() |> lubridate::day()
-dia <- "23"
+dia <- "30"
 
 c("completo", "sin nubes", "solo nubes")
 

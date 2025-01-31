@@ -49,11 +49,14 @@ p_prog_soc_graf <-
 # Principales programas sociales
 
 p_programa_social_graf <- 
-enc_neza$Resultados$Descriptiva$barras_multirespuesta(patron_inicial = "programa_social",
-                                                      salto = 60,
-                                                      porcentajes_fuera = F)+
+  enc_neza$Resultados$Descriptiva$barras_multirespuesta(patron_inicial = "programa_social",
+                                                        salto = 40,
+                                                        porcentajes_fuera = T,
+                                                        text_size = 5,
+                                                        desplazar_porcentajes = 0.035 )+
   scale_fill_manual(values = colores_programa_social) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1.0),limits = c(0,1)) +
   labs(caption = p_programa_social_tit) +
-  theme(axis.text.y = element_text(size = 16),
+  theme(axis.text.y = element_text(size = 12),
         axis.text.x = element_text(size = 14),
         legend.text = element_text(size = 14))

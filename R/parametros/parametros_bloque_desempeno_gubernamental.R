@@ -14,7 +14,7 @@ p_delfina_tit <-
                 x = llaves)) |>
   distinct(pregunta) |>
   pull() |>
-  stringr::str_wrap(width = 55)
+  stringr::str_wrap(width = 60)
 
 
 aspectos_delfina <-

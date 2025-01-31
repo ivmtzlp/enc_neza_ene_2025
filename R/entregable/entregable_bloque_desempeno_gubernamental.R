@@ -15,10 +15,10 @@ if(revision){
 
   library(officer)
 
-  bloque<-'Desempeño gubernamental'
+  bloque<-'Desempeno_gube'
 
   fecha_hoy<- lubridate::now()
-  fecha <-paste0(lubridate::day(fecha_hoy),'_',lubridate::month(fecha_hoy),'_24','_',lubridate::hour(fecha_hoy),"hrs")
+  fecha <-paste0(lubridate::day(fecha_hoy),'_',lubridate::month(fecha_hoy),'_25','_',lubridate::hour(fecha_hoy),"hrs")
   path_export <- paste0("./presentaciones/",bloque,"_",fecha,".pptx")
   pptx <- read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
@@ -33,17 +33,25 @@ add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
 # Desempeno gobierno delfina
 
  
-add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
-  ph_with(value = p_delfina_1_graf, 
-          location = ph_location_label(ph_label = "imagen_principal")) |>
+# add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+#   ph_with(value = p_delfina_1_graf, 
+#           location = ph_location_label(ph_label = "imagen_principal")) |>
+#   ph_with(value = "Evaluación ciudadana de Delfina Gómez",
+#           location = ph_location_label(ph_label = "titulo"))
+# #grafica 2
+# add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+#   ph_with(value = p_delfina_2_graf, 
+#           location = ph_location_label(ph_label = "imagen_principal")) |>
+#   ph_with(value = "Evaluación ciudadana de Delfina Gómez",
+#           location = ph_location_label(ph_label = "titulo"))
+
+
+add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia") %>%
+  ph_with(value = p_delfina_1_graf, location = ph_location_label(ph_label = "grafica_uno")) |>
+  ph_with(value = p_delfina_2_graf, location = ph_location_label(ph_label = "grafica_dos")) |>
   ph_with(value = "Evaluación ciudadana de Delfina Gómez",
           location = ph_location_label(ph_label = "titulo"))
-#grafica 2
-add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
-  ph_with(value = p_delfina_2_graf, 
-          location = ph_location_label(ph_label = "imagen_principal")) |>
-  ph_with(value = "Evaluación ciudadana de Delfina Gómez",
-          location = ph_location_label(ph_label = "titulo"))
+
 
 # Satisfación sevicios 
 
