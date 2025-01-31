@@ -1,12 +1,13 @@
 # library(officer)
 # library(dplyr)
-# 
-# path_export <- 
-#   encuestar:::formato_archivo(nombre = "./presentaciones/entregable_bloque_conocimiento_personaje", 
-#                               extension = "pptx", 
+source(file = "./R/cruces/cruce_sexo_generacion_horacio.R")
+
+# path_export <-
+#   encuestar:::formato_archivo(nombre = "./presentaciones/entregable_bloque_conocimiento_personaje",
+#                               extension = "pptx",
 #                               tolerancia = 60)
 # 
-# pptx <- 
+# pptx <-
 #   read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
 
@@ -38,6 +39,15 @@ add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia
   ph_with(value = p_conoce_per2_horacio_graf, location = ph_location_label(ph_label = "grafica_uno")) |>
   ph_with(value = p_opinion_per2_graf, location = ph_location_label(ph_label = "grafica_dos")) |>
   ph_with(value = "Visibilidad y percepción pública de Horacio Duarte",
+          location = ph_location_label(ph_label = "titulo"))
+
+#conocimiento genero sexo
+
+
+add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia") %>%
+  ph_with(value = p_conoce_per2_horacio_graf_sexo_generacion, 
+          location = ph_location_label(ph_label = "imagen_principal")) |>
+  ph_with(value = "Conocimiento de Horacio Duarte por sexo y generación",
           location = ph_location_label(ph_label = "titulo"))
 
 # print(pptx, path_export)
