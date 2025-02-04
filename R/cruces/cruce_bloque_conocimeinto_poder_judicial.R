@@ -43,6 +43,14 @@ bd_aprueba_per_delfina_delincuencia_edomex<-
   rename(tema = delincuencia_edomex, media = coef,respuesta = aprueba_per_delfina  )
 
 
+bd_delincuencia_edomex_delf<- 
+encuestar:::analizar_frecuencias(diseno = enc_neza$muestra$diseno,
+                                 pregunta = "delincuencia_edomex") |> 
+  rename(tema = respuesta)
+
+
+
+
 
 aprueba_per_delfina_delincuencia_edomex_graf <-   
   bd_aprueba_per_delfina_delincuencia_edomex |> 
@@ -63,12 +71,16 @@ aprueba_per_delfina_delincuencia_edomex_graf <-
                                          color_nsnc = color_nsnc,
                                          
                                          # Burbuja
-                                         burbuja =NULL, 
+                                         burbuja =bd_delincuencia_edomex_delf,
+                                         color_burbuja =  color_general,
+                                         caption_burbuja = "Percepción\nseguridad", 
                                          
                                          
                                          # tamanos
                                          size_text_cat = 16, 
                                          size_pct = 16,
+                                         size_caption_burbuja =12,
+                                         size_caption_opinion = 14,
                                          salto = 35,
                                          orden_cat = c("seg","in","ns"),
                                          tema = tema_morant())

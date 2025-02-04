@@ -53,13 +53,21 @@ if(modo!="sin nubes"){
             location = ph_location_label(ph_label = "titulo"))
 }
 
-#conocimiento genero sexo
+#conocimiento generacion sexo
 
 
 add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = p_conoce_per2_horacio_graf_sexo_generacion, 
           location = ph_location_label(ph_label = "imagen_principal")) |>
   ph_with(value = "Conocimiento de Horacio Duarte por sexo y generación",
+          location = ph_location_label(ph_label = "titulo"))
+
+# opinion sexo
+
+add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+  ph_with(value = opinion_sexo_horacio_graf , 
+          location = ph_location_label(ph_label = "imagen_principal")) |>
+  ph_with(value = "Opinión sobre Horacio Duarte por sexo",
           location = ph_location_label(ph_label = "titulo"))
 
 # print(pptx, path_export)

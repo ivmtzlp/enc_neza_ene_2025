@@ -22,6 +22,13 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = "Principales problemas en el Estado de México",
           location = ph_location_label(ph_label = "titulo"))
 
+# Cruce de percepcion de seguridad contra desempeno del gobierno de delfina gomez
+add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
+  ph_with(value = aprueba_per_delfina_delincuencia_edomex_graf , 
+          location = ph_location_label(ph_label = "imagen_principal")) |>
+  ph_with(value = "Niveles de aprobación del gobierno de Delfina Gómez por percepción de seguridad",
+          location = ph_location_label(ph_label = "titulo"))
+
 # # Percepción de delincuencia
 # add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
 #   ph_with(value = p_delincuencia_edomex_graf , 
@@ -70,7 +77,6 @@ add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia
   ph_with(value = p_extorsion_edomex_graf, location = ph_location_label(ph_label = "grafica_dos")) |>
   ph_with(value = "Visibilidad de crímenes en el Estado de México",
           location = ph_location_label(ph_label = "titulo"))
-
 
 
 
