@@ -189,9 +189,9 @@ colores_progeso_municipio <-
 orden_progreso_municipio <- c("Progresando",  "Estancado", "En retroceso", "Ns/Nc" )
 
 colores_progreso <- c(
-  "En retroceso" = color_opinionMala,
+  "En retroceso" = color_opinion_mala,
   "Estancado" =  color_regular,
-  "Progresando" = color_opinionBuena)
+  "Progresando" = color_opinion_buena)
 
 
 p_progeso_gen_tit <- "¿Cree usted que, en este momento, (...) está: progresando, estancado o en retroceso?" |> 
