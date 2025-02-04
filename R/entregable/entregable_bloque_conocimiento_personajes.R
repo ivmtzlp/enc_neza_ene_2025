@@ -41,10 +41,22 @@ add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia
   ph_with(value = "Visibilidad y percepción pública de Horacio Duarte",
           location = ph_location_label(ph_label = "titulo"))
 
+
+if(modo!="sin nubes"){
+  
+  add_slide(pptx, layout = "gerencia_dos_graficas_equitativas_inteligencia", master = "gerencia") %>%
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_uno")) |>
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_dos")) |>
+    ph_with(value = "¿Por qué tiene una opinión (…) de Horacio Duarte? ",
+            location = ph_location_label(ph_label = "titulo"))
+}
+
 #conocimiento genero sexo
 
 
-add_slide(pptx, layout = "gerencia_dos_graficas_equitativas", master = "gerencia") %>%
+add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = p_conoce_per2_horacio_graf_sexo_generacion, 
           location = ph_location_label(ph_label = "imagen_principal")) |>
   ph_with(value = "Conocimiento de Horacio Duarte por sexo y generación",

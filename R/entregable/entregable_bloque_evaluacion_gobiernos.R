@@ -9,7 +9,7 @@
 # pptx <-
 #   read_pptx(path = "./insumos/plantilla_general_09_12_24.pptx")
 
-source(file = "./R/cruces/cruces_bloque_gobiernos.R")
+#source(file = "./R/cruces/cruces_bloque_gobiernos.R")
 
 add_slide(pptx, layout = "gerencia_subportada", master = "gerencia") %>%
   ph_with(value = 'Evaluación de Gobiernos',
@@ -46,6 +46,34 @@ add_slide(pptx, layout = "gerencia_grafica_unica", master = "gerencia") %>%
   ph_with(value = "Aprobación de figuras públicas",
           location = ph_location_label(ph_label = "titulo"))
 
+if(modo!="sin nubes"){
+  
+  add_slide(pptx, layout = "gerencia_dos_graficas_equitativas_inteligencia", master = "gerencia") %>%
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_uno")) |>
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_dos")) |>
+    ph_with(value = "¿Porqué (...) el trabjo de Claudia Sheinbaum?",
+            location = ph_location_label(ph_label = "titulo"))
+  
+  add_slide(pptx, layout = "gerencia_dos_graficas_equitativas_inteligencia", master = "gerencia") %>%
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_uno")) |>
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_dos")) |>
+    ph_with(value = "¿Porqué (...) el trabjo de Delfina Gómez Álvarez?",
+            location = ph_location_label(ph_label = "titulo"))
+  
+  add_slide(pptx, layout = "gerencia_dos_graficas_equitativas_inteligencia", master = "gerencia") %>%
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_uno")) |>
+    ph_with(value =  "", 
+            location = ph_location_label(ph_label = "grafica_dos")) |>
+    ph_with(value = "¿Porqué (...) el trabjo del presidente municipal?",
+            location = ph_location_label(ph_label = "titulo"))
+  
+  
+}
 
 # Confianza en figuras publicas 
 

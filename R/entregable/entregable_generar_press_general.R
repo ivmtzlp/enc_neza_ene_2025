@@ -17,6 +17,10 @@ source(file = './R/resultados/resultados_bloque_evaluacion_gobiernos.R')
 source(file = './R/resultados/resultados_bloque_intencion_voto_gobernador.R')
 source(file = './R/resultados/resultados_bloque_introduccion.R')
 source(file = './R/resultados/resultados_bloque_programas_sociales.R')
+
+
+source(file = "./R/cruces/cruces_bloque_gobiernos.R")
+source(file = "./R/cruces/cruce_sexo_generacion_horacio.R")
 # Parametros ----------------------------------------------------------------------------------
 
 proyecto_fecha <- "Encuesta Nezahualcoyotl - Enero 2025"

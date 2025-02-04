@@ -21,18 +21,15 @@ bd_horacio_generacion_sexo <-
 
 
 
-encuestar:::analizar_cruce(diseno = enc_neza$muestra$diseno ,
-                           variable_principal = "sexo_cat",
-                           variable_secundaria = "conoce_per2_horacio",
-                           vartype =  'cv'  )
-
+# encuestar:::analizar_cruce(diseno = enc_neza$muestra$diseno ,
+#                            variable_principal = "sexo_cat",
+#                            variable_secundaria = "conoce_per2_horacio",
+#                            vartype =  'cv'  )
+# 
 
 
 
 #grafica generacion
-
-
-
 
 p_conoce_per2_horacio_graf_sexo_generacion <-
   
@@ -80,8 +77,67 @@ p_conoce_per2_horacio_graf_sexo_generacion <-
   
   
 
+################
+# Opinion Duarte Sexo
+###############
+analizar_frecuencias_aspectos(diseno = enc_neza$muestra$diseno,
+                              diccionario = dicc,
+                              patron_pregunta = "conoce_per2",
+                              aspectos = "horacio") 
+
+bd_conoce_per2_horacio_2<- 
+encuestar:::analizar_cruce(diseno = enc_neza$muestra$diseno ,
+                           variable_principal = "sexo_cat",
+                           variable_secundaria = "conoce_per2_horacio",
+                           vartype =  'cv'  )|> 
+  mutate(aspecto = case_match(sexo_cat,
+                              "Hombre"~"sexo_conoce_h",
+                              "Mujer"~ "sexo_conoce_m")) |> 
+  rename(tema = sexo_cat, media = coef,respuesta = conoce_per2_horacio) |> 
+  filter(respuesta == "Sí")
 
 
+bd_opinion_sexo_horacio<- 
+  encuestar:::analizar_cruce(diseno = enc_neza$muestra$diseno,
+                             variable_principal = "sexo_cat",
+                             variable_secundaria = "opinion_per2_horacio",
+                             vartype = "cv",na_rm = T)|> 
+  mutate(aspecto = case_match(sexo_cat,
+                              "Hombre"~"sexo_h",
+                              "Mujer"~ "sexo_m")) |> 
+  rename(tema = sexo_cat, media = coef,respuesta = opinion_per2_horacio)
+
+
+
+opinion_sexo_horacio_graf <-   
+  bd_opinion_sexo_horacio |> 
+  encuestar:::graficar_candidato_opinion(patron_inicial = "sexo", 
+                                         
+                                         #Grupos positivos
+                                         grupo_positivo = c("Buena"), 
+                                         grupo_negativo = rev(c("Mala")), 
+                                         colores = colores_opinion_per2, 
+                                         caption_opinion = "¿Cuál es su opinión sobre Horacio Duarte, buena o mala?",
+                                         orden_resp = c("Mala", "Regular", "Buena"),
+                                         
+                                         # Regular
+                                         regular = "Regular", 
+                                         
+                                         # ns_nc
+                                         ns_nc = "Ns/Nc", 
+                                         color_nsnc = color_nsnc,
+                                         
+                                         # Burbuja
+                                         burbuja = bd_conoce_per2_horacio_2,
+                                         color_burbuja = color_general,
+                                         caption_burbuja = "Conocimiento",
+                                         
+                                         # tamanos
+                                         size_text_cat = 16, 
+                                         size_pct = 16,
+                                         size_caption_burbuja = 14,
+                                         salto = 35,
+                                         tema = tema_morant())
 
 
 
