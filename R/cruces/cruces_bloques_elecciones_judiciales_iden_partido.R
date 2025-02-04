@@ -1,7 +1,9 @@
 library(tidyverse)
 library(srvyr)
 
-encuesta <- srvyr::as_survey_design(enc_neza$Resultados$diseno)
+#encuesta <- srvyr::as_survey_design(enc_neza$Resultados$diseno)
+
+# Cruce entre participacion en las elecciones del poder judicial e identificación partidista
 
 bd_voto_jud <- 
  
@@ -26,7 +28,7 @@ bd_voto_jud$eleccion_pjn_participacion <-
 )
  
 
-
+identificacion_partido_eleccion_pjn_participacion <- 
 bd_voto_jud %>% 
   rename(respuesta = identificacion_partido,media = coef) %>% 
   encuestar:::graficar_barras(text_size = 10)+
@@ -37,8 +39,25 @@ bd_voto_jud %>%
   encuestar::tema_morant()
 
 
+# Cruce entre participacion en las elecciones del poder judicial e interes en la politics
 
 
+temas_eleccion_pjn_participacion_graf <- 
+  enc_neza$muestra$diseno$variables |> 
+  mutate(pesos =  weights(enc_neza$muestra$diseno)) |> 
+  mutate(temas_b = case_match(temas,
+                              "Política"~"Política",
+                              "Ns/Nc"~"Ns/Nc",
+                              .default = "Otros")) |>
+  mutate(temas_b = factor(temas_b,levels = c("Política","Otros","Ns/Nc"))) |> 
+  count(temas_b,eleccion_pjn_participacion,wt = pesos) |> 
+  group_by(temas_b) |> 
+  mutate(media = n/sum(n)) |> 
+  rename(respuesta = eleccion_pjn_participacion)|> 
+  encuestar:::graficar_barras(text_size = 10)+
+  scale_fill_manual(values = colores_eleccion_pjn_participacion)+
+  facet_wrap(~temas_b)+
+  tema_morant()
   
 
   
