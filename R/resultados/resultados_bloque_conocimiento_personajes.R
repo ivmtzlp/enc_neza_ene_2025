@@ -57,7 +57,7 @@ p_opinion_per2_graf <-
                                                     orden_respuestas = c("Ns/Nc","Mala","Regular", "Buena") ) +
   scale_fill_manual(values = colores_opinion_per2)+
   scale_y_continuous(labels = scales::percent_format(accuracy = 1.0),limits = c(0,1))+
-  labs(caption = p_conocimiento_per2_tit )+
+  labs(caption = p_opinion_per2_tit )+
   theme(
     plot.caption = element_text(size = 14)
   )

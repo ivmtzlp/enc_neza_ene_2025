@@ -14,7 +14,7 @@ p_conoce_per2_horacio_tit <-
 
 # Opinion de personajes secundarios
 
-p_conocimiento_per2_tit <- 
+p_opinion_per2_tit <- 
   dicc |> 
   filter(grepl(pattern = "personajes", 
                x = bloque)) |> 
