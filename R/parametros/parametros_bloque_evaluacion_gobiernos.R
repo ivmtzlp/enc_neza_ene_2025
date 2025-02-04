@@ -190,7 +190,7 @@ orden_progreso_municipio <- c("Progresando",  "Estancado", "En retroceso", "Ns/N
 
 colores_progreso <- c(
   "En retroceso" = color_opinion_mala,
-  "Estancado" =  color_regular,
+  "Estancado" =  color_opinion_regular,
   "Progresando" = color_opinion_buena)
 
 
