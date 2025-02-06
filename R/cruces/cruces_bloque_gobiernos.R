@@ -46,14 +46,14 @@ encuestar:::analizar_cruce_aspectos(diseno = enc_neza$Resultados$diseno,
 p_conoce_per_cruce_edad_graf <-
   
   enc_neza$Resultados$Cruce$lolipop_diferencias(variable_principal =  "generacion",
-                                                   variables_secundarias = c("conoce_per_delfina","conoce_per_claudia","conoce_per_neza") ,
+                                                   variables_secundarias = c("conoce_per_claudia","conoce_per_delfina","conoce_per_neza") ,
                                                    
                                                    filtro_variables_secundarias  = "Sí lo conoce", 
                                                    orden_variablePrincipal =  orden_generaciones,
                                                    colores_variables_secundarias =  c("Claudia Sheinbaum" = "#A6032F", 
                                                                                       "Delfina Gómez Álvarez" = "#CF6177",
                                                                                       "Adolfo Cerqueda Rebollo" = "#F5CD5F"),
-                                                  
+                                                    
                                                    caption = "Conocimiento de personaje por edad", 
                                                    invertir_variables = F,
                                                    limits = c(0,1.1), 
